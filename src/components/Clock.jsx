@@ -6,20 +6,18 @@ class Clock extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        startTimer: false,
-        hour:0,
-        minute:0,
-        second:0
+        startTimer: false, //make startTimer true when stopwatch is started
+        hour:0,  //increase this after every 60 minute if startTimer is true
+        minute:0,  //increase this after every 60 second if startTimer is true 
+        second:0  //increase this after every second if startTimer is true
       };
     }
-    //use componentdidmount to set the timer and timer should update every second
     componentDidMount() {
       this.timerID = setInterval(
         () => this.tick(),
         1000
       );
     }
-    //use componentwillunmount to clear the timer
     componentWillUnmount() {
       clearInterval(this.timerID);
     }
