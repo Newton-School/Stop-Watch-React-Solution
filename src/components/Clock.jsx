@@ -69,13 +69,13 @@ class Clock extends React.Component {
             {/* Call the time component and pass hour minute and second as props */}
             <Time hour={this.state.hour} minute={this.state.minute} second={this.state.second}/>
 
-            {/* create 3 buttons for start stop and reset */}
+            {/* create 3 buttons for start stop and reset and their ids should be start stop and reset*/}
             <br></br>
-            <button onClick={()=>this.start()}>start</button>
+            <button id="start" onClick={()=>this.start()}>start</button>
             <br></br>
-            <button onClick={()=>this.stop()}>stop</button>
+            <button id="stop" onClick={()=>this.stop()}>stop</button>
             <br></br>
-            <button onClick={()=>{this.reset()}}>reset</button>
+            <button id="reset" onClick={()=>{this.reset()}}>reset</button>
         </div>
       );
     }
